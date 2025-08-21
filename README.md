@@ -48,6 +48,7 @@ The Exit button in the GUI closes the graphical interface but leaves the system 
 ### ⚙️ Performance
 - **RAM Usage**: Under 40 MB
 - **CPU Usage**: ~0% on average (except during blacklist updates)
+- **Compressed Images**: Image size has been reduced by an average of 37.5%.
 - **Optimization Potential**: Can be further enhanced using tools like `cython` . 
 
 ---
