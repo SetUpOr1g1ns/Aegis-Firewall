@@ -81,6 +81,7 @@ def block_menu():
                     dbBlockIP(ip)
                     message = f"IP {ip} blocked."
                     log(f"✅​ Successfully blocked manually added IP ({ip})")
+                    block_and_deny(ip)
                 else:
                     message = "Invalid IP format."
 
@@ -95,6 +96,7 @@ def block_menu():
                     cur.execute('DELETE FROM allowed_ips WHERE ip = ?', (sel_ip))
                     conn.commit()
                     conn.close()
+                    block_and_deny(ip)
 
             lbl_msg.config(text=message)
         except Exception as e:
@@ -163,3 +165,4 @@ def block_menu():
         list_ips.insert(tk.END, ip)
 
     root.mainloop()
+
