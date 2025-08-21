@@ -39,7 +39,6 @@ def allow_menu():
         except ValueError:
             return False
 
-
     def repeated(address):
         try:
             conn = sqlite3.connect("Resources\\Data\\ip.db")
@@ -51,7 +50,6 @@ def allow_menu():
         except Exception as e:
             log(f"❌ Unable to check if IP ({address}) was repeated. Context: {e}")
             return False
-
 
     def allow_and_unblock(address):
         try:
@@ -68,7 +66,6 @@ def allow_menu():
             log(f"✅​ Successfully added Firewall rules to IP ({address}).")
         except Exception as e:
             log(f"⚠️ Unable to add Firewall rules to IP ({address}). Context: {e}")
-
 
     def allow_ip():
         ip = entrybox.get().strip()
@@ -165,4 +162,3 @@ def allow_menu():
         list_ips.insert(tk.END, ip)
 
     root.mainloop()
-
