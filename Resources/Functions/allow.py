@@ -125,7 +125,7 @@ def allow_menu():
     entrybox = ttk.Entry(frame_in, width=25, justify="center")
     entrybox.pack(pady=5)
 
-    ttk.Button(left, text="Allow IP", command=allow_ip).pack(pady=5)
+    tk.Button(left,text="Allow IP", command=allow_ip, width=15, bg="#1f2e5a", fg="white", relief="flat", cursor="hand2").pack(pady=5)
 
     lbl_msg = tk.Label(left, text="", fg="cyan", bg="#172445", wraplength=200, justify="center")
     lbl_msg.pack(pady=10)
@@ -138,7 +138,7 @@ def allow_menu():
     frame_list = tk.Frame(right, bg="#172445")
     frame_list.pack(fill="both", expand=True, pady=(15, 40))
 
-    list_ips = tk.Listbox(frame_list, width=23, height=8, selectmode="extended")
+    list_ips = tk.Listbox(frame_list, width=23, height=8, selectmode="extended", bg="#1f2e5a", fg="white", relief="flat")
     list_ips.pack(side="left", fill="both", expand=True, padx=(0, 10))
 
     scroll = ttk.Scrollbar(frame_list, orient="vertical", command=list_ips.yview)
@@ -162,3 +162,4 @@ def allow_menu():
         list_ips.insert(tk.END, ip)
 
     root.mainloop()
+    
