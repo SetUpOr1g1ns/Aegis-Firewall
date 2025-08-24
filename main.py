@@ -46,7 +46,17 @@ class FirewallGUI(tk.Tk):
         btn_actions = [allow_menu, block_menu, update_db, self.destroy]
 
         for i, text in enumerate(btn_texts):
-            btn = ttk.Button(btn_frame, text=text, width=15, command=btn_actions[i])
+            btn = tk.Button(
+                btn_frame,
+                text=text,
+                width=15,
+                command=btn_actions[i],
+                bg="#1f2e5a", 
+                fg="white", 
+                relief="flat",
+                cursor="hand2"
+            )
+            
             btn.pack(pady=8, fill="x")
 
 
@@ -63,7 +73,6 @@ if __name__ == "__main__":
     def on_quit(icon):
         icon.stop()
 
-
     image = Image.open("Resources\\Assets\\icon.png")
     menu = pystray.Menu(
         pystray.MenuItem("Open GUI", on_clicked),
@@ -73,3 +82,4 @@ if __name__ == "__main__":
     # Start the system tray icon
     icon = pystray.Icon("Firewall", image, "Firewall", menu)
     icon.run()
+    
